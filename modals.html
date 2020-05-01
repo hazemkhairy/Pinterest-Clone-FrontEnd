@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pinterest</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="modalsStyles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="modal.js"></script>
+ 
+</head>
+<body>
+ <!-- Preconfig Modal-->
+<div class="container">
+  <div class="modal fade" id="preAuthentication" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+          <div class="titleContainer">
+            <img src="plogo.png" class="logo"/>
+      <h2 class="welcomeText" >Welcome to Pinterest</h2>
+      <h5 class="ideasText" >For new ideas to try</h5>
+      <button type="button" class="loginButton" data-toggle="modal"  data-target="#Login">Log in</button>
+      <button type="button" class="signupButton" data-toggle="modal"  data-target="#SignUp">Sign Up</button>
+    </div>
+        
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div> -->
+        
+      </div>
+    </div>
+  </div>
+ <!-- SignUp Modal-->
+  <div class="container">
+    <div class="modal fade" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="backButton" data-dismiss="modal" aria-label="Close" data-toggle="modal"  data-target="#Login"   >Login</button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+            <div class="titleContainer">
+              <img src="plogo.png" class="logo"/>
+        <h2 class="welcomeText" >Welcome to Pinterest</h2>
+      <input type="email" class="textInput" id="email"  placeholder="Email" data-toggle="popover" title="Email" data-content="Email must contain an @ example test@test.com">
+          <input type="password" class="textInput" id="password" placeholder="Password" data-toggle="popover" title="Password" data-content="Password must consist of 8 charactersincluding capital letter">
+          <input type="mobile" class="textInput" id="mobile" placeholder="Mobile">
+          <input type="date" class="textInput" id="birthdate" placeholder="Birthdate">
+          <button type="button" class="signupButton" onclick="validateSignUpForm()" id="signupbutton">Sign Up</button>
+          <div class="successAlert alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> you have successfully registered.
+          </div>
+          <div class="errorAlert alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong> Please fill required data.
+          </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+         
+         
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Login Modal-->
+  <div class="container">
+    <div class="modal fade" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <button type="button" class="backButton" data-dismiss="modal" aria-label="Close" data-toggle="modal"  data-target="#SignUp" >Sign Up</button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+            <div class="titleContainer">
+              <img src="plogo.png" class="logo"/>
+        <h2 class="welcomeText" >Welcome to Pinterest</h2>
+      <div class="input-container">
+        <i class="fa fa-envelope icon"></i>
+        <input class="input-field" type="text" placeholder="Email" name="email" id="loginemail" data-toggle="tooltip" data-placement="top" title="Your Email">
+      </div>
+      <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input class="input-field" type="password" placeholder="Password" name="psw" id="loginpassword" data-toggle="tooltip" data-placement="top" title="Your Password">
+      </div>
+      <button class="loginButton" onclick="validateLoginForm()">Log in</button>
+      <div class="successAlert alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> you have successfully logged in.
+      </div>
+      <div class="errorAlert alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> Please enter your email and password.
+      </div>
+      <div class="invalidemailAlert alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> Invalid Email
+      </div>
+   
+    </div>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
