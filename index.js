@@ -42,7 +42,8 @@ loadPhotos();
 
 
 const paginationCreator = async (curPage) => {
-    let payload = await fetch(`https://pinterest-clone-restful-api.herokuapp.com/api/Posts/getAllPosts/{curPage}/`)
+    console.log('page ' + curPage)
+    let payload = await fetch(`https://pinterest-clone-restful-api.herokuapp.com/api/Posts/getAllPosts/${curPage}/`)
         .then(
             (res) => {
                 return res.json();
@@ -66,7 +67,7 @@ const paginationCreator = async (curPage) => {
             let button = document.createElement('button');
             button.classList.add('page-link');
             button.innerText = i;
-            button.onmousedown = () => { paginationCreator(i) }
+            button.onclick = () => { paginationCreator(i) }
             li.appendChild(button);
         }
         console.log(li)
