@@ -11,9 +11,56 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        
-        <div class="row" style="max-height: '20%'!important;">
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top row nav-fill w-100 m-0">
+            <a class="navbar-brand" href="#" id="brand">
+                <img src="./Assets/logo.png" alt="Logo" style="width: 30px;" />
+            </a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav nav-fill w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Following</a>
+                    </li>
+                    <li class="nav-item" id="searchBar">
+                        <input class="form-control " type="text" placeholder="Search" aria-label="Search"
+                            style="width: 100%;" />
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <img src="./Assets/notification.png" alt="notification" style="width:30px;" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <img src="./Assets/chat.png" alt="chat" style="width:30px;" />
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <img src="./Assets/profile.webp" alt="profile" style="width:30px;" />
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                            <img src="./Assets/arrowdown.png" alt="arrowdown" style="width:30px;" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Help</a>
+                            <a class="dropdown-item" href="#">Log Out</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row" >
             <div class="col-12 mx-auto">
 
                 <div style="background:rgba(0, 0, 0, 0.3) !important;max-height: '20%'!important;"
@@ -56,18 +103,7 @@
             </div>
         </div>
         <nav aria-label="...">
-            <ul class="pagination" id="pagination">
-                <li class="page-item">
-                    <button class="page-link" href="#">1</button>
-                </li>
-                <li class="page-item active">
-                    <span class="page-link">
-                        2
-                    </span>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
+            <ul class="pagination d-flex justify-content-center align-items-center" id="pagination">
             </ul>
         </nav>
         <div class="row mx-auto" id="footer">

@@ -2,7 +2,7 @@ const init = () => {
     $('.carousel').carousel()
     $('[data-toggle="popover"]').popover({
         html: true,
-        template: '<div class="popover bg-white rounded" role="tooltip"><div class="arrow"></div><h3 class="popover-header bg-white border-bottom"></h3><div class="popover-body p-0"></div></div>'
+        template: '<div class="popover bg-white rounded-lg" role="tooltip"><div class="arrow"></div><h3 class="popover-header bg-white border-bottom b-5"></h3><div class="popover-body p-0"></div></div>'
     }).on('shown.bs.popover', function () {
         setTimeout(function (a) {
             a.popover('hide');
@@ -13,7 +13,7 @@ const init = () => {
 const createRoundButton = (text) => {
     const div = document.createElement('div');
     const button = document.createElement('button');
-    button.classList.add('btn', 'btn-light', 'rounded-pill', 'border-0', 'p-1');
+    button.classList.add('btn', 'm-1', 'btn-light', 'rounded-pill', 'border-0', 'p-1', 'justify-content-center', 'align-items-center');
     const p = document.createElement('p');
     p.classList.add('p-0', 'm-1', 'align-center')
     p.innerHTML = text;
@@ -37,7 +37,6 @@ const createPopOverEffect = (optionsButton) => {
     }
 
     optionsButton.title = 'This Pin was inspired by your recent activity'
-    optionsButton.setAttribute('data-toggle', 'button')
     optionsButton.setAttribute('data-toggle', 'popover')
     optionsButton.setAttribute('data-content', btnGroup.outerHTML)
     return optionsButton
@@ -45,9 +44,9 @@ const createPopOverEffect = (optionsButton) => {
 const createLowerRow = () => {
     const lowerRow = document.createElement('div');
     lowerRow.classList.add('d-flex', 'flex-row-reverse', 'justify-content-around');
-    let optionsButton = createRoundButton('&#8230');
+    let optionsButton = createRoundButton('&#8943');
     optionsButton = createPopOverEffect(optionsButton)
-    const shareButton = createRoundButton('sh');
+    const shareButton = createRoundButton('&#10815');
     const handleButton = createRoundButton('handle');
 
     lowerRow.appendChild(optionsButton);
@@ -98,8 +97,8 @@ const createCardCover = () => {
 
 const createCard = (data) => {
     const card = document.createElement('div');
-    card.classList.add('card', 'col-5', 'col-sm-4', 'col-md-2', 'm-2', 'p-0','modifiedCard')
-
+    card.classList.add('card', 'p-0', 'modifiedCard')
+    card.classList.add('col-6', 'col-sm-4', 'col-md-3', 'col-lg-2', 'm-2')
 
     const cardCover = createCardCover();
     card.onmouseenter = () => { cardCover.style.visibility = 'visible' }
@@ -108,8 +107,8 @@ const createCard = (data) => {
     const img = document.createElement('img')
     img.src = data.url;
     img.classList.add('img');
-    img.style.maxHeight='350px'
-    
+    img.style.maxHeight = '350px'
+
     card.appendChild(cardCover)
     card.appendChild(img)
     return card;
@@ -126,7 +125,7 @@ const createCardsArray = async (data) => {
 const displayPhotos = (photos) => {
 
     const view = document.getElementById('photosGrid');
-    view.innerHTML='';
+    view.innerHTML = '';
     photos.forEach(element => {
         view.append(element)
 

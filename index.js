@@ -31,18 +31,7 @@ const displayMostPopular = () => {
     init();
 }
 
-const loadPhotos = async () => {
-    const photos = getPhotos(20);
-    const cards = await createCardsArray(photos);
-    displayPhotos(cards);
-    displayMostPopular();
-    init();
-}
-loadPhotos();
-
-
 const paginationCreator = async (curPage) => {
-    console.log('page ' + curPage)
     let payload = await fetch(`https://pinterest-clone-restful-api.herokuapp.com/api/Posts/getAllPosts/${curPage}/`)
         .then(
             (res) => {
@@ -50,27 +39,22 @@ const paginationCreator = async (curPage) => {
             }
         )
     payload = payload.payload
-    console.log(payload)
-    let maxPages = payload.pages;
     let paginationDiv = document.getElementById('pagination');
     paginationDiv.innerHTML = '';
-    for (let i = 1; i <= maxPages; i++) {
+    for (let i = 1; i <= payload.pages; i++) {
         let li = document.createElement('li');
         li.classList.add('page-item');
+        let temp;
         if (i == curPage) {
+            temp = document.createElement('span');
             li.classList.add('active')
-            let span = document.createElement('span');
-            span.classList.add('page-link');
-            span.innerText = curPage;
-            li.appendChild(span);
         } else {
-            let button = document.createElement('button');
-            button.classList.add('page-link');
-            button.innerText = i;
-            button.onclick = () => { paginationCreator(i) }
-            li.appendChild(button);
+            temp = document.createElement('button');
+            temp.onclick = () => { paginationCreator(i) }
         }
-        console.log(li)
+        temp.classList.add('page-link');
+        temp.innerText = i;
+        li.appendChild(temp);
         paginationDiv.appendChild(li);
     }
     let photos = getPhotos2(payload.posts);
@@ -78,4 +62,10 @@ const paginationCreator = async (curPage) => {
     displayPhotos(cards);
     init();
 }
-paginationCreator(1);
+
+const loadPhotos = async () => {
+    paginationCreator(1);
+    displayMostPopular();
+    init();
+}
+loadPhotos();
