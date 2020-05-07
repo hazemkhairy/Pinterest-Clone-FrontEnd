@@ -1,49 +1,16 @@
-.titleContainer{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-   /* margin-left: 30%;
-   margin-right: 20%; */
+.columContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
-.logo{
-  width: 50px;
-  height: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-.buttonContainer{
-display: flex;
-flex-direction: column;
-text-align: center;
-}
-.loginButton{
-background-color:  #E60022;
-color: white;
-border-radius: 20px;
-width: 300px;
+.img-circle{
+width: 50px;
+height: 50px;
+display: block;
 margin-left: auto;
 margin-right: auto;
-display:block;
-margin-bottom: 10px;
 }
-.signupButton{
-border-radius: 20px;
-color: black;
-width: 300px;
-margin-left: auto;
-margin-right: auto;
-display:block;
-margin-bottom: 15px;
-}
-.backButton{
-  background-color:  #E60022;
-  color: white;
-  width: 100px;
-  border-radius: 20px;
-}
-.textInput{
+#name,#email,#password,#birthdate,#profilePicUrl{
 width: 300px;
 height: 40px;
 border-radius: 20px;
@@ -53,6 +20,47 @@ display:block;
 margin-top: 10px;
 padding: 10px;
 }
+.loginButton{
+background-color:  #E60022;
+color: white;
+border-radius: 20px;
+width: 300px;
+height: 50px;
+margin-left: auto;
+margin-right: auto;
+display:block;
+margin-bottom: 10px;
+}
+.signupButton{
+background-color: #EFEFEF;
+border-radius: 20px;
+color: black;
+width: 300px;
+height: 50px;
+margin-left: auto;
+margin-right: auto;
+display:block;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.signupButton-form{
+background-color: #E60022;
+border-radius: 20px;
+color: white;
+width: 300px;
+height: 50px;
+margin-left: auto;
+margin-right: auto;
+display:block;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.backButton{
+background-color:  #E60022;
+color: white;
+width: 100px;
+border-radius: 20px;
+}
 
 .input-group-text{
 height: 50px;
@@ -60,61 +68,48 @@ border-top-right-radius: 20px;
 border-bottom-right-radius: 20px; 
 margin-bottom: 10px;
 }
-.welcomeText{
-text-align: center;
 
-}
-.ideasText{
-text-align: center;
-margin-bottom: 15px;
-}
-body{
-  padding:100px 0;
-  background-color:#efefef
+/* body{
+padding:100px 0;
+background-color:#efefef
 }
 a, a:hover{
-  color:#333
-}
+color:#333
+} */
 .input-container {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  width: 100%;
-  margin-bottom: 15px;
-  
-}
+display: -ms-flexbox; /* IE10 */
+display: flex;
+width: 100%;
+margin-bottom: 15px;
 
+}
 .icon {
-  padding: 10px;
-  background: gray;
-  color: white;
-  width: 50px;
-  text-align: center;
-  margin-left: auto;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+padding: 10px;
+background: gray;
+color: white;
+width: 50px;
+text-align: center;
+margin-left: auto;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
 }
-
 .input-field {
-  width: 250px;
-  padding: 10px;
-  outline: none;
-  margin-right: auto;
-  display:block;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+width: 250px;
+padding: 10px;
+outline: none;
+margin-right: auto;
+display:block;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
 }
-
 .input-field:focus {
-  border: 2px solid gray;
+border: 2px solid gray;
 }
 
 .progress-bar {
-  border-radius: 5px;
-  margin-left: 105px;
-  
+border-radius: 5px;
+margin-left: 20%;
 }
-
-
 .alert{
-  display: none;
+display: none;
 }

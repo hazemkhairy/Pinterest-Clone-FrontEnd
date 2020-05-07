@@ -26,10 +26,10 @@
         <div class="modal-header text-center">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
-          <div class="titleContainer">
-            <img src="plogo.png" class="logo"/>
-      <h2 class="welcomeText" >Welcome to Pinterest</h2>
-      <h5 class="ideasText" >For new ideas to try</h5>
+          <div class="columContainer">
+            <img src="plogo.png" class="img-circle"/>
+            <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+            <h5>For new ideas to try <span class="label label-default"></span></h5>
       <button type="button" class="loginButton" data-toggle="modal"  data-target="#Login">Log in</button>
       <button type="button" class="signupButton" data-toggle="modal"  data-target="#SignUp">Sign Up</button>
     </div>
@@ -51,17 +51,17 @@
             <button type="button" class="backButton" data-dismiss="modal" aria-label="Close" data-toggle="modal"  data-target="#Login"   >Login</button>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
-            <div class="titleContainer">
-              <img src="plogo.png" class="logo"/>
-        <h2 class="welcomeText" >Welcome to Pinterest</h2>
+            <div class="columContainer">
+              <img src="plogo.png" class="img-circle"/>
+              <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
         </div>
-        <input type="text" class="textInput" id="name" placeholder="Full name">
-          <input type="email" class="textInput" id="email"  placeholder="Email" data-toggle="popover" title="Email" data-content="Email must contain an @ example test@test.com">
-          <input type="password" class="textInput" id="password" value="" name="password" placeholder="Password" data-toggle="popover" title="Password" data-content="Password must consist of 8 charactersincluding capital letter" onkeyup="isGood(this.value)">
+        <input type="text" class="form-control" id="name" placeholder="Full name">
+          <input type="email" class="form-control" id="email"  placeholder="Email" data-toggle="popover" title="Email" data-content="Email must contain an @ example test@test.com">
+          <input type="password" class="form-control" id="password" value="" name="password" placeholder="Password" data-toggle="popover" title="Password" data-content="Password must consist of 8 characters including capital letter" onkeyup="isGood(this.value)">
           <small class="help-block" id="password-text"></small>
-          <input type="date" class="textInput" id="birthdate" placeholder="Birthdate">
-          <input type="text" class="textInput" id="profilePicUrl" placeholder="profile Picture Url">
-          <button type="button" class="signupButton" onclick="SignUp()" id="signupbutton">Sign Up</button>
+          <input type="date" class="form-control" id="birthdate" placeholder="Birthdate">
+          <input type="url" class="form-control" id="profilePicUrl" placeholder="profile Picture Url">
+          <button type="button" class="signupButton-form" onclick="SignUp()" id="signupbutton">Sign Up</button>
           <div class="successAlert alert alert-success">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> you have successfully registered.
@@ -74,9 +74,9 @@
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Error!</strong> Invalid Email
           </div>
-          <div class="invalidmobileAlert alert alert-danger">
+          <div class="shortpasswordAlert alert alert-danger">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>Error!</strong> Mobile must contain numbers only and consist of digits between 6 & 12 digits
+            <strong>Error!</strong> Short Password
           </div>
     </div>
         </div>
@@ -92,9 +92,9 @@
             <button type="button" class="backButton" data-dismiss="modal" aria-label="Close" data-toggle="modal"  data-target="#SignUp" >Sign Up</button>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           </div>
-            <div class="titleContainer">
-              <img src="plogo.png" class="logo"/>
-        <h2 class="welcomeText" >Welcome to Pinterest</h2>
+            <div class="columContainer">
+              <img src="plogo.png"  class="img-circle"/>
+              <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
       <div class="input-container">
         <i class="fa fa-envelope icon"></i>
         <input class="input-field" type="text" placeholder="Email" name="email" id="loginemail" data-toggle="tooltip" data-placement="top" title="Your Email">
@@ -133,3 +133,5 @@
   <script type="text/javascript" src="modal.js"></script>
 </body>
 </html>
+
+
