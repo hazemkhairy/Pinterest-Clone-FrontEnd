@@ -20,47 +20,6 @@ display:block;
 margin-top: 10px;
 padding: 10px;
 }
-.loginButton{
-background-color:  #E60022;
-color: white;
-border-radius: 20px;
-width: 300px;
-height: 50px;
-margin-left: auto;
-margin-right: auto;
-display:block;
-margin-bottom: 10px;
-}
-.signupButton{
-background-color: #EFEFEF;
-border-radius: 20px;
-color: black;
-width: 300px;
-height: 50px;
-margin-left: auto;
-margin-right: auto;
-display:block;
-margin-top: 10px;
-margin-bottom: 10px;
-}
-.signupButton-form{
-background-color: #E60022;
-border-radius: 20px;
-color: white;
-width: 300px;
-height: 50px;
-margin-left: auto;
-margin-right: auto;
-display:block;
-margin-top: 10px;
-margin-bottom: 10px;
-}
-.backButton{
-background-color:  #E60022;
-color: white;
-width: 100px;
-border-radius: 20px;
-}
 
 .input-group-text{
 height: 50px;
@@ -69,13 +28,6 @@ border-bottom-right-radius: 20px;
 margin-bottom: 10px;
 }
 
-/* body{
-padding:100px 0;
-background-color:#efefef
-}
-a, a:hover{
-color:#333
-} */
 .input-container {
 display: -ms-flexbox; /* IE10 */
 display: flex;

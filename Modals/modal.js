@@ -125,15 +125,16 @@ if(validateSignUpForm()==true)
   }).then(response => response.json())
   .then(data => {
     console.log('Success:', data);
+    $(".errorAlert").hide();
+    $(".successAlert").show();
+    setTimeout(function(){
+      $(".successAlert").hide(); 
+    }, 5000);
   })
   .catch((error) => {
     console.error('Error:', error);
   });
-  $(".errorAlert").hide();
-        $(".successAlert").show();
-        setTimeout(function(){
-          $(".successAlert").hide(); 
-        }, 5000);
+  
 }
 }
 
@@ -160,51 +161,47 @@ $('[data-toggle="popover"]').popover();
  
  
  
- function isGood(password) {
-  var password_strength = document.getElementById("password-text");
+  function isGood(password) {
+    var password_strength = document.getElementById("password-text");
 
-  //TextBox left blank.
-  if (password.length == 0) {
-    password_strength.innerHTML = "";
-    return;
-  }
-
-  //Regular Expressions.
-  var regex = new Array();
-  regex.push("[A-Z]"); //Uppercase Alphabet.
-  regex.push("[a-z]"); //Lowercase Alphabet.
-  regex.push("[0-9]"); //Digit.
-  regex.push("[$@$!%*#?&]"); //Special Character.
-
-  var passed = 0;
-
-  //Validate for each Regular Expression.
-  for (var i = 0; i < regex.length; i++) {
-    if (new RegExp(regex[i]).test(password)) {
-      passed++;
+    //TextBox left blank.
+    if (password.length == 0) {
+      password_strength.innerHTML = "";
+      return;
     }
+
+    //Regular Expressions.
+    var regex = new Array();
+    regex.push("[A-Z]"); //Uppercase Alphabet.
+    regex.push("[a-z]"); //Lowercase Alphabet.
+    regex.push("[0-9]"); //Digit.
+    regex.push("[$@$!%*#?&]"); //Special Character.
+
+    var passed = 0;
+
+    //Validate for each Regular Expression.
+    for (var i = 0; i < regex.length; i++) {
+      if (new RegExp(regex[i]).test(password)) {
+        passed++;
+      }
+    }
+
+    //Display status.
+    var strength = "";
+    switch (passed) {
+      case 0:
+      case 1:
+      case 2:
+        strength = "<small class='progress-bar bg-danger' role='progressbar' style='width: 20%'>Weak</small>";
+        break;
+      case 3:
+        strength = "<small class='progress-bar bg-warning' role='progressbar' style='width: 40%'>Medium</small>";
+        break;
+      case 4:
+        strength = "<small class='progress-bar bg-success' role='progressbar' style='width: 60%'>Strong</small>";
+        break;
+
+    }
+    password_strength.innerHTML = strength;
+
   }
-
-  //Display status.
-  var strength = "";
-  switch (passed) {
-    case 0:
-       strength = "<small class='progress-bar bg-danger' style='width: 20%'>Weak</small>";
-       break;
-    case 1:
-      strength = "<small class='progress-bar bg-danger' style='width: 20%'>Weak</small>";
-      break;
-    case 2:
-      strength = "<small class='progress-bar bg-danger' style='width: 20%'>Weak</small>";
-      break;
-    case 3:
-      strength = "<small class='progress-bar bg-warning' style='width: 40%'>Medium</small>";
-      break;
-    case 4:
-      strength = "<small class='progress-bar bg-success' style='width: 60%'>Strong</small>";
-      break;
-
-  }
-  password_strength.innerHTML = strength;
-
-}  
