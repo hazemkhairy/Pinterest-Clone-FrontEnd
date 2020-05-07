@@ -5,15 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="modalsStyles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="modal.js"></script>
- 
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- for icons -->
+
+  
+  
 </head>
 <body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#preAuthentication">
+    Launch demo modal
+  </button>
  <!-- Preconfig Modal-->
 <div class="container">
   <div class="modal fade" id="preAuthentication" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,11 +54,14 @@
             <div class="titleContainer">
               <img src="plogo.png" class="logo"/>
         <h2 class="welcomeText" >Welcome to Pinterest</h2>
-      <input type="email" class="textInput" id="email"  placeholder="Email" data-toggle="popover" title="Email" data-content="Email must contain an @ example test@test.com">
-          <input type="password" class="textInput" id="password" placeholder="Password" data-toggle="popover" title="Password" data-content="Password must consist of 8 charactersincluding capital letter">
-          <input type="mobile" class="textInput" id="mobile" placeholder="Mobile">
+        </div>
+        <input type="text" class="textInput" id="name" placeholder="Full name">
+          <input type="email" class="textInput" id="email"  placeholder="Email" data-toggle="popover" title="Email" data-content="Email must contain an @ example test@test.com">
+          <input type="password" class="textInput" id="password" value="" name="password" placeholder="Password" data-toggle="popover" title="Password" data-content="Password must consist of 8 charactersincluding capital letter" onkeyup="isGood(this.value)">
+          <small class="help-block" id="password-text"></small>
           <input type="date" class="textInput" id="birthdate" placeholder="Birthdate">
-          <button type="button" class="signupButton" onclick="validateSignUpForm()" id="signupbutton">Sign Up</button>
+          <input type="text" class="textInput" id="profilePicUrl" placeholder="profile Picture Url">
+          <button type="button" class="signupButton" onclick="SignUp()" id="signupbutton">Sign Up</button>
           <div class="successAlert alert alert-success">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success!</strong> you have successfully registered.
@@ -63,11 +70,14 @@
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Error!</strong> Please fill required data.
           </div>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="invalidemailAlert alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong> Invalid Email
           </div>
-         
-         
+          <div class="invalidmobileAlert alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong> Mobile must contain numbers only and consist of digits between 6 & 12 digits
+          </div>
     </div>
         </div>
       </div>
@@ -93,7 +103,7 @@
         <i class="fa fa-key icon"></i>
         <input class="input-field" type="password" placeholder="Password" name="psw" id="loginpassword" data-toggle="tooltip" data-placement="top" title="Your Password">
       </div>
-      <button class="loginButton" onclick="validateLoginForm()">Log in</button>
+      <button class="loginButton" onclick="Login()">Log in</button>
       <div class="successAlert alert alert-success">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> you have successfully logged in.
@@ -114,6 +124,12 @@
   </div>
 
 </div>
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" src="modal.js"></script>
 </body>
 </html>

@@ -6,9 +6,9 @@
    margin-right: 20%; */
 }
 .logo{
-width: 50px;
-height: 50px;
-display: block;
+  width: 50px;
+  height: 50px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 
@@ -50,27 +50,10 @@ border-radius: 20px;
 margin-left: auto;
 margin-right: auto;
 display:block;
-margin-bottom: 10px;
+margin-top: 10px;
 padding: 10px;
 }
-.passwordText{
-    width: 300px;
-    height: 40px;
-   border-bottom-left-radius: 20px;
-   border-top-left-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
-    margin-bottom: 10px;
-    }
-.form{
-width: 200px;
-height: 50px;
-border-bottom-left-radius: 20px;
-border-top-left-radius: 20px;
- margin-left: 90px; 
-margin-bottom: 10px;
-}
+
 .input-group-text{
 height: 50px;
 border-top-right-radius: 20px;
@@ -83,7 +66,6 @@ text-align: center;
 }
 .ideasText{
 text-align: center;
-
 margin-bottom: 15px;
 }
 body{
@@ -126,6 +108,11 @@ a, a:hover{
   border: 2px solid gray;
 }
 
+.progress-bar {
+  border-radius: 5px;
+  margin-left: 105px;
+  
+}
 
 
 .alert{
