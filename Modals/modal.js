@@ -2,35 +2,31 @@ $(document).ready(function () {
   $("#preAuthentication").modal('show');
 });
 
-const validateLoginForm = () => {
+function validateLoginForm() {
   let email = document.getElementById("loginemail").value;
   let password = document.getElementById("loginpassword").value;
   let valid = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-  let invalid = false;
-
-  if (email == "" || password == "") {
-    invalid = true;
-    $(".successAlert").hide();
-    $(".errorAlert").show();
-    setTimeout(function () {
-      $(".errorAlert").hide();
-    }, 5000);
-
+  
+  if (email == "" || password == "" ) {
+    showloginErrorAlert('Please Fill required data.')
     return false;
   }
-  if (valid.test(email) !== true) {
-    invalid = true;
-    $(".invalidemailAlert").show();
-    setTimeout(function () {
-      $(".invalidemailAlert").hide();
-    }, 5000);
-    return false
+  else {
+    if (valid.test(email) !== true) {
+      showloginErrorAlert('Invalid Email')
+      return false;
+    }
   }
   return true;
 }
+
 const Login = () => {
   let email = document.getElementById("loginemail").value.toString();
   let password = document.getElementById("loginpassword").value.toString();
+  let obj = {
+    email: email,
+    password: password
+  }
   if (validateLoginForm() == true) {
     fetch(`https://pinterest-clone-restful-api.herokuapp.com/api/User/Login`,
       {
@@ -38,29 +34,45 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-
-          email: email,
-          password: password
-
-        })
-      }).then(response => response.json())
+        body: JSON.stringify(obj)
+      })
+      .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        if(data.message=='Login success')
+        {
+          $(".errorAlert").hide();
+          $(".successAlert").show();
+           setTimeout(function () {
+          $(".successAlert").hide();
+          }, 5000);
+        }
+        else 
+        showErrorAlert(data.message)
       })
       .catch((error) => {
         console.error('Error:', error);
+        showErrorAlert(error)
       });
+
   }
 }
-
-const showSignUpErrorAlert = (message) => {
+const showErrorAlert = (message) => {
   let errorMessage = document.getElementById('errorMessage')
   errorMessage.innerText = message;
   $(".successAlert").hide();
   $(".errorAlert").show();
   setTimeout(function () {
     $(".errorAlert").hide();
+  }, 5000);
+}
+const showloginErrorAlert = (message) => {
+  let errorMessage = document.getElementById('errorloginMessage')
+  errorMessage.innerText = message;
+  $(".successAlert").hide();
+  $(".errorLoginAlert").show();
+  setTimeout(function () {
+    $(".errorLoginAlert").hide();
   }, 5000);
 }
 function validateSignUpForm() {
@@ -70,17 +82,25 @@ function validateSignUpForm() {
   let birthdate = document.getElementById("birthdate").value;
   let profilePicUrl = document.getElementById("profilePicUrl").value;
   let valid = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  var letters = /^[A-Za-z ]+$/;
   if (email == "" || password == "" || name == "" || birthdate == "" || profilePicUrl == "") {
-    showSignUpErrorAlert('Please Fill required data.')
+    showErrorAlert('Please Fill required data.')
     return false;
   }
   else {
     if (valid.test(email) !== true) {
-      showSignUpErrorAlert('Invalid Email')
+      showErrorAlert('Invalid Email')
+      
       return false;
     }
     if (password.length < 8) {
-      showSignUpErrorAlert('Short Password')
+      showErrorAlert('Short Password')
+      
+      return false;
+    }
+    if(letters.test(name)!==true)
+    {
+      showErrorAlert('Enter letters or space only in your name')
       return false;
     }
   }
@@ -113,15 +133,20 @@ const SignUp = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        $(".errorAlert").hide();
-        $(".successAlert").show();
-        setTimeout(function () {
+        if(data.message=='Registered successfully')
+        {
+          $(".errorAlert").hide();
+          $(".successAlert").show();
+           setTimeout(function () {
           $(".successAlert").hide();
-        }, 5000);
+          }, 5000);
+        }
+        else 
+        showErrorAlert(data.message)
       })
       .catch((error) => {
         console.error('Error:', error);
-        showSignUpErrorAlert(error)
+        showErrorAlert(error)
       });
 
   }
@@ -172,7 +197,7 @@ function isGood(password) {
       strength = "<small class='progress-bar bg-warning' role='progressbar' style='width: 40%'>Medium</small>";
       break;
     case 4:
-      strength = "<small class='progress-bar bg-success' role='progressbar' style='width: 60%'>Strong</small>";
+      strength = "<small class='progress-bar bg-success' role='progressbar' style='width: 80%'>Strong</small>";
       break;
 
   }
