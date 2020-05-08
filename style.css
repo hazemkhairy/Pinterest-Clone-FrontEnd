@@ -1,0 +1,31 @@
+.modifiedCard:hover {
+    cursor: zoom-in;
+}
+.modifiedCard{
+    overflow: hidden!important;
+    border-radius: 1em!important;
+}
+div>ul>li:hover {
+    border-radius: 25px;
+    background-color: #d3d3d3;
+}
+
+#btn:hover {
+    border-radius: 25px;
+    background-color: #d3d3d3;
+}
+
+#follow:hover {
+    border-radius: 25px;
+    background-color: #d3d3d3;
+}
+
+li {
+    display: inline;
+    margin: 5px;
+}
+
+#searchBar:hover {
+    color: rgb(155, 125, 125);
+    background-color: honeydew;
+}
