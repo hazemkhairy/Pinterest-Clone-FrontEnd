@@ -105,7 +105,7 @@ const createCard = (data) => {
     card.onmouseleave = () => { cardCover.style.visibility = 'hidden' }
 
     const img = document.createElement('img')
-    img.src = data.url;
+    img.src = data.picture;
     img.classList.add('img');
     img.style.height = '350px'
 
@@ -138,8 +138,8 @@ const getDivsOfMostPopular = (photos) => {
         container.classList.add('carousel-item', 'd-flex', 'align-items-center');
         const img = document.createElement('img');
         img.classList.add('img-fluid', 'd-block', 'w-100');
-        img.src = photos[i].url;
-        img.style.maxHeight = '350px'
+        img.src = photos[i].picture;
+        img.style.height = '450px';
         container.appendChild(img);
         divs.push(container);
     }
