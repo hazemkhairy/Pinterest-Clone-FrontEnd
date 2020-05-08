@@ -1,0 +1,57 @@
+.columContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.img-circle {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#name, #email, #password, #birthdate, #profilePicUrl {
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.icon {
+  padding: 10px;
+  background: gray;
+  color: white;
+  width: 50px;
+  text-align: center;
+  margin-left: auto;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.progress-bar {
+  border-radius: 5px;
+  margin-left: 20%;
+}
+
+.alert {
+  display: none;
+}
+
+.roundedBTN {
+  border-radius: 20px!important;
+}
+
+.loginTextField {
+  border-bottom-right-radius: 20px !important;
+  border-top-right-radius: 20px!important;
+}
+
+.loginTextField:focus {
+  border: 2px solid gray;
+}
