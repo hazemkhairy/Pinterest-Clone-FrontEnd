@@ -107,7 +107,7 @@ const createCard = (data) => {
     const img = document.createElement('img')
     img.src = data.url;
     img.classList.add('img');
-    img.style.maxHeight = '350px'
+    img.style.height = '350px'
 
     card.appendChild(cardCover)
     card.appendChild(img)
