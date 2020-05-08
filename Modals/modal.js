@@ -48,11 +48,11 @@ const Login = () => {
           }, 5000);
         }
         else 
-        showErrorAlert(data.message)
+        showloginErrorAlert(data.message)
       })
       .catch((error) => {
         console.error('Error:', error);
-        showErrorAlert(error)
+        showloginErrorAlert(error)
       });
 
   }
