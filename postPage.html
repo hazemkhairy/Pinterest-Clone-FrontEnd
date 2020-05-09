@@ -38,10 +38,10 @@
 
 <body>
   <!-- Container -->
-  <div class="container-fluid">
+  <div class="container-fluid row p-0 m-0">
     <!-- nav -->
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top row nav-fill w-100 m-0">
-      <a class="navbar-brand" href="#" id="brand">
+      <a class="navbar-brand" href="./HomePage.html" id="brand">
         <img src="./Assets/logo.png" alt="Logo" style="width: 30px;" />
       </a>
       <!-- Toggler/collapsibe Button -->
@@ -51,7 +51,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="nav navbar-nav nav-fill w-100">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="./HomePage.html">Home</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="#">Following</a>
@@ -88,20 +88,20 @@
       </div>
     </nav>
     <!-- BreadCrumb -->
-    <nav aria-label="breadcrumb row">
-      <ol class="breadcrumb col-12">
+    <nav class="w-100" aria-label="breadcrumb">
+      <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="./HomePage.html">Home</a></li>
         <li class="breadcrumb-item"><a id="breadcrumb-userName" href="#">Hazem</a></li>
         <li class="breadcrumb-item active" id="breadcrumb-image" aria-current="page"></li>
       </ol>
     </nav>
     <!-- Media Object -->
-    <div class="media row">
+    <div class="media row col-12">
       <!-- Media Image -->
       <img class="mr-3 col-6" id="postImage" src="" alt="Generic placeholder image" />
       <!-- Media Body -->
       <div class="media-body border p-2 rounded-lg bg-light col-6 row">
-        <div class="d-flex flex-row justify-content-between col-12">
+        <div class="d-flex flex-row justify-content-between col-12 p-0">
           <div class="d-flex flex-row" style="display: inline;">
             <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
               <img src="./PostDetail/3.png" alt="Logo" style="width:20px;" />
@@ -150,6 +150,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
   <script src="./PostDetail/post.js"></script>
+  <script src="./navBar/NavBarScripts.js"></script>
 </body>
 
 </html>
