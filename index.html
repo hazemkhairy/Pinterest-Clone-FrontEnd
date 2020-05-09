@@ -2,177 +2,158 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Pinterest</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Modals/modalsStyles.css">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Pinterest Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- for icons -->
+
+
+
 </head>
 
-<body class="p-0 m-0">
-    <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top row nav-fill w-100 m-0">
-            <a class="navbar-brand" href="#" id="brand">
-                <img src="./Assets/logo.png" alt="Logo" style="width: 30px;" />
-            </a>
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="nav navbar-nav nav-fill w-100">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Following</a>
-                    </li>
-                    <li class="nav-item" id="searchBar">
-                        <input class="form-control " type="text" placeholder="Search" aria-label="Search"
-                            style="width: 100%;" />
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand  m-0" href="#">
-                            <img src="./Assets/notification.png" alt="notification" style="width:30px;" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand m-0" href="#">
-                            <img src="./Assets/chat.png" alt="chat" style="width:30px;" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="navbar-brand  m-0" href="#">
-                            <img src="./Assets/profile.webp" alt="profile" style="width:30px;" />
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
-                            <img src="./Assets/arrowdown.png" alt="arrowdown" style="width:30px;" />
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="#">Help</a>
-                            <a class="dropdown-item" href="#">Log Out</a>
+<body>
+    <div class="container-fluid">
+
+        <img class="img-fluid" src="./Modals/backGround.PNG" />
+        <!-- Preconfig Modal-->
+        <div class="container-fluid">
+            <div class="modal fade" id="preAuthentication" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+
                         </div>
-                    </li>
-                </ul>
+                        <div class="columContainer">
+                            <img src="./Modals/plogo.png" class="img-circle" />
+                            <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+                            <h5>For new ideas to try <span class="label label-default"></span></h5>
+                            <div class="row">
+
+                                <button type="button" class="btn btn-danger roundedBTN col-7 mb-2 mx-auto"
+                                    data-toggle="modal" onclick="showModal('Login')">Log in</button>
+                                <button type="button" class="btn btn-light roundedBTN col-7 mb-2 mx-auto"
+                                    data-toggle="modal" onclick="showModal('SignUp')">
+                                    Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mx-auto">
-                <li class="breadcrumb-item active" aria-current="page">Home</li>
-            </ol>
-        </nav>
-        <div class="row w-100">
-            <div class="col-6 mx-auto p-0">
+            <!-- SignUp Modal-->
+            <div class="container-fluid">
+                <div class="modal hide" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
+                                    onclick="showModal('Login')">Login</button>
+                            </div>
+                            <div class="columContainer">
+                                <img src="./Modals/plogo.png" class="img-circle" />
+                                <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+                            </div>
+                            <div class="form-row">
 
-                <div style="background:rgba(100, 100, 100, .1) !important;" class="jumbotron jumbotron-fluid">
-                    <div class="container-fluid m-0">
-                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                            <div class="carousel-inner" id="mostPopular">
+                                <input type="text" class="form-control col-7" id="name" placeholder="Full name">
+                                <input type="email" class="form-control col-7" id="email" placeholder="Email"
+                                    data-toggle="popover" title="Email" data-trigger="focus"
+                                    data-content="Email must contain an @ example test@test.com">
+                                <input type="password" class="form-control col-7" id="password" value="" name="password"
+                                    placeholder="Password" data-toggle="popover" title="Password" data-trigger="focus"
+                                    data-content="Password must consist of 8 characters including capital letter"
+                                    onkeyup="isGood(this.value)">
+                                <small class="help-block col-7 offset-1" id="password-text"></small>
+                                <input type="date" class="form-control col-7" id="birthdate" placeholder="Birthdate">
+                                <input type="url" class="form-control col-7" id="profilePicUrl"
+                                    placeholder="profile Picture Url">
 
+                                <button type="button" class="btn btn-danger roundedBTN col-7 mx-auto my-2"
+                                    onclick="SignUp()" id="signupbutton">
+                                    Sign Up
+                                </button>
 
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleFade" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleFade" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            <div class="successAlert alert alert-success">
+                                <strong>Success!</strong> you have successfully registered.
+                            </div>
+                            <div class="errorAlert alert alert-danger">
+                                <strong>Error!</strong>
+                                <div style="display: inline;" id="errorMessage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login Modal-->
+        <div class="container-fluid">
+            <div class="modal hide" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
+                                onclick="showModal('SignUp')">Sign Up</button>
+                        </div>
+                        <div class="columContainer">
+                            <img src="./Modals/plogo.png" class="img-circle" />
+                            <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+                            <div class="row">
+
+                                <div class="input-group col-7 mx-auto p-0">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-envelope icon"></i>
+                                    </div>
+                                    <input class="form-control loginTextField" type="text" placeholder="Email"
+                                        name="email" id="loginemail" data-toggle="tooltip" data-placement="top"
+                                        title="Your Email">
+                                </div>
+
+                                <div class="mt-2 input-group col-7 mx-auto p-0">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-key icon"></i>
+                                    </div>
+                                    <input class="form-control loginTextField" type="password" placeholder="Password"
+                                        name="psw" id="loginpassword" data-toggle="tooltip" data-placement="top"
+                                        title="Your Password">
+                                </div>
+                                <button class="btn btn-danger roundedBTN col-7 my-2 mx-auto" onclick="Login()">
+                                    Log in</button>
+                            </div>
+                            <div class="successAlert alert alert-success">
+                                <strong>Success!</strong> you have successfully logged in.
+                            </div>
+                            <div class="errorLoginAlert alert alert-danger">
+                                <strong>Error!</strong>
+                                <div style="display: inline;" id="errorloginMessage">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row mx-auto ">
-            <div class="col-lg-12 mx-auto ">
-
-                <div class="row mx-auto justify-content-center" id="photosGrid">
-                </div>
-            </div>
-        </div>
-        <nav aria-label="...">
-            <ul class="pagination d-flex justify-content-center align-items-center" id="pagination">
-            </ul>
-        </nav>
-        <div class="row mx-auto" id="footer">
-            <div class="accordion w-100" id="accordionExample">
-                <div class="card w-100">
-                    <div class="card-header w-100" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="true" aria-controls="collapseOne">
-                                Our Team
-                            </button>
-                        </h5>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-                            -Aly Mahmoud
-                            <br>
-                            -Hazem Khairy
-                            <br>
-                            -Mai Sherif
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Our Project
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            Simple clone of Pinterest to use bootstrap features
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Contacts us
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                        data-parent="#accordionExample">
-                        <div class="card-body">
-                            -Aly@mahmoud.com<br>
-                            -Hazemkhairy188@gmail.com<br>
-                            -Mai@sherif.com
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./UiCreator.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./Modals/modal.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Bootstrap</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+  <style>
+    div>ul>li:hover {
+      border-radius: 25px;
+      background-color: #d3d3d3;
+    }
+
+    #btn:hover {
+      border-radius: 25px;
+      background-color: #d3d3d3;
+    }
+
+    #follow:hover {
+      border-radius: 25px;
+      background-color: #d3d3d3;
+    }
+
+    li {
+      display: inline;
+      margin: 5px;
+    }
+
+    #searchBar:hover {
+      color: rgb(155, 125, 125);
+      background-color: honeydew;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Container -->
+  <div class="container-fluid row p-0 m-0">
+    <!-- nav -->
+    <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top row nav-fill w-100 m-0">
+      <a class="navbar-brand" href="./HomePage.html" id="brand">
+        <img src="./Assets/logo.png" alt="Logo" style="width: 30px;" />
+      </a>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="nav navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <a class="nav-link" href="./HomePage.html">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Following</a>
+          </li>
+          <li class="nav-item" id="searchBar">
+            <input class="form-control " type="text" placeholder="Search" aria-label="Search" style="width: 100%;" />
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand  m-0" href="#">
+              <img src="./Assets/notification.png" alt="notification" style="width:30px;" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand m-0" href="#">
+              <img src="./Assets/chat.png" alt="chat" style="width:30px;" />
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="navbar-brand  m-0" href="#">
+              <img src="./Assets/profile.webp" alt="profile" style="width:30px;" />
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+              <img src="./Assets/arrowdown.png" alt="arrowdown" style="width:30px;" />
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="#">Help</a>
+              <a class="dropdown-item" href="#">Log Out</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- BreadCrumb -->
+    <nav class="w-100" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./HomePage.html">Home</a></li>
+        <li class="breadcrumb-item"><a id="breadcrumb-userName" href="#">Hazem</a></li>
+        <li class="breadcrumb-item active" id="breadcrumb-image" aria-current="page"></li>
+      </ol>
+    </nav>
+    <!-- Media Object -->
+    <div class="media row col-12">
+      <!-- Media Image -->
+      <img class="mr-3 col-6" id="postImage" src="" alt="Generic placeholder image" />
+      <!-- Media Body -->
+      <div class="media-body border p-2 rounded-lg bg-light col-6 row">
+        <div class="d-flex flex-row justify-content-between col-12 p-0">
+          <div class="d-flex flex-row" style="display: inline;">
+            <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+              <img src="./PostDetail/3.png" alt="Logo" style="width:20px;" />
+            </a>
+
+            <div class="btn-group btn-group-sm " role="group" aria-label="Basic example">
+              <div class="dropdown ">
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" id="download" href="#">Download Image</a>
+                  <a class="dropdown-item" href="#">Report</a>
+                </div>
+              </div>
+            </div>
+            <a class="nav-link" href="#">
+              <img src="./PostDetail/upload.png" alt="Logo" style="width:20px;" />
+            </a>
+          </div>
+          <button type="button" class="btn align-self-end">
+            <img src="./PostDetail/save.png" alt="Logo" style="width: 40px;" />
+          </button>
+        </div>
+        <!-- Post Data -->
+        <h1 class="col-12" id="title"></h1>
+        <p class="lead col-12" id="caption"></p>
+
+        <div class="media row m-1 border rounded-lg  p-2  bg-white w-100">
+          <img src="" id="userImg" class="rounded-circle mr-1 col-xs-2" style="height: 60px;" />
+          <div class="media-body col-9">
+            <a class="col-1" href="#" id="userName" style="color: black;font-weight: bold;"></a>
+            <p class="col-1" style="font-size: 15px;" id="followers" class="mt-2"></p>
+          </div>
+          <a class="p-2 rounded-lg bg-light " href="#" style="color: black;">
+            Follow
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="./PostDetail/post.js"></script>
+  <script src="./navBar/NavBarScripts.js"></script>
+</body>
+
+</html>

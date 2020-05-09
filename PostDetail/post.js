@@ -46,6 +46,6 @@ this.setAttribute('download','img');
 this.click();
 },false)
 
-document.getElementById("breadcrumb-userName").addEventListener("click",function(){
-    window.location.href = `profile.html/${userID}`
-})
+// document.getElementById("breadcrumb-userName").addEventListener("click",function(){
+//     window.location.href = `profile.html/${userID}`
+// })
