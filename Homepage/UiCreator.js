@@ -11,16 +11,32 @@ const init = () => {
 
 }
 
-const createRoundButton = (text) => {
+const createRoundButtonWithText = (text) => {
     const div = document.createElement('div');
     const button = document.createElement('button');
     button.classList.add('btn', 'm-1', 'btn-light', 'rounded-pill', 'border-0', 'p-1', 'justify-content-center', 'align-items-center');
     const p = document.createElement('p');
-    p.classList.add('p-0', 'm-1', 'align-center')
+    p.classList.add('p-1', 'm-0', 'align-center')
     p.innerHTML = text;
-    p.style.fontSize = '125%'
+    p.style.fontSize = '110%'
     p.style.fontWeight = "600"
     button.appendChild(p)
+    div.appendChild(button);
+
+    div.onclick = (e) => { e.stopPropagation() }
+    return div;
+}
+const createRoundButtonWithImage = (imgPath) => {
+    const div = document.createElement('div');
+    const button = document.createElement('button');
+    button.classList.add('btn', 'm-1', 'btn-light', 'rounded-pill', 'border-0', 'p-1', 'justify-content-center', 'align-items-center');
+    const img = document.createElement('img');
+    img.src = imgPath
+    img.classList.add('img')
+    img.style.height = '100%'
+    img.style.width = '30px'
+
+    button.appendChild(img)
     div.appendChild(button);
 
     div.onclick = (e) => { e.stopPropagation() }
@@ -48,11 +64,10 @@ const createPopOverEffect = (optionsButton) => {
 const createLowerRow = () => {
     const lowerRow = document.createElement('div');
     lowerRow.classList.add('d-flex', 'flex-row-reverse', 'justify-content-around');
-    let optionsButton = createRoundButton('&#8943');
+    let optionsButton = createRoundButtonWithImage('./HomePage/threeDots.png');
     optionsButton = createPopOverEffect(optionsButton)
-    const shareButton = createRoundButton('&#10815');
-    const handleButton = createRoundButton('handle');
-
+    const shareButton = createRoundButtonWithImage('./HomePage/upload.png');
+    const handleButton = createRoundButtonWithText('handle');
     lowerRow.appendChild(optionsButton);
     lowerRow.appendChild(shareButton);
     lowerRow.appendChild(handleButton);
@@ -119,7 +134,7 @@ const createCard = (data) => {
     card.appendChild(cardCover)
     card.appendChild(img)
 
-    card.onclick = () => { location.href='./postPage.html'+`?ID=${data._id}`}
+    card.onclick = () => { location.href = './postPage.html' + `?ID=${data._id}` }
     return card;
 
 }
