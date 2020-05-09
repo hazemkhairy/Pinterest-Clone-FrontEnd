@@ -18,127 +18,132 @@
 </head>
 
 <body>
-    <img class="img-fluid" src="./Modals/backGround.PNG" />
-    <!-- Preconfig Modal-->
     <div class="container-fluid">
-        <div class="modal fade" id="preAuthentication" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
 
-                    </div>
-                    <div class="columContainer">
-                        <img src="./Modals/plogo.png" class="img-circle" />
-                        <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
-                        <h5>For new ideas to try <span class="label label-default"></span></h5>
-                        <div class="row">
-
-                            <button type="button" class="btn btn-danger roundedBTN col-7 mb-2 mx-auto"
-                                data-toggle="modal" onclick="showModal('Login')">Log in</button>
-                            <button type="button" class="btn btn-light roundedBTN col-7 mb-2 mx-auto"
-                                data-toggle="modal" onclick="showModal('SignUp')">
-                                Sign Up</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- SignUp Modal-->
+        <img class="img-fluid" src="./Modals/backGround.PNG" />
+        <!-- Preconfig Modal-->
         <div class="container-fluid">
-            <div class="modal hide" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal fade" id="preAuthentication" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header text-center">
-                            <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
-                                onclick="showModal('Login')">Login</button>
+
                         </div>
                         <div class="columContainer">
                             <img src="./Modals/plogo.png" class="img-circle" />
                             <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
-                        </div>
-                        <div class="form-row">
+                            <h5>For new ideas to try <span class="label label-default"></span></h5>
+                            <div class="row">
 
-                            <input type="text" class="form-control col-7" id="name" placeholder="Full name">
-                            <input type="email" class="form-control col-7" id="email" placeholder="Email"
-                                data-toggle="popover" title="Email" data-trigger="focus"
-                                data-content="Email must contain an @ example test@test.com">
-                            <input type="password" class="form-control col-7" id="password" value="" name="password"
-                                placeholder="Password" data-toggle="popover" title="Password" data-trigger="focus"
-                                data-content="Password must consist of 8 characters including capital letter"
-                                onkeyup="isGood(this.value)">
-                            <small class="help-block col-7 offset-1" id="password-text"></small>
-                            <input type="date" class="form-control col-7" id="birthdate" placeholder="Birthdate">
-                            <input type="url" class="form-control col-7" id="profilePicUrl"
-                                placeholder="profile Picture Url">
-
-                            <button type="button" class="btn btn-danger roundedBTN col-7 mx-auto my-2"
-                                onclick="SignUp()" id="signupbutton">
-                                Sign Up
-                            </button>
-
+                                <button type="button" class="btn btn-danger roundedBTN col-7 mb-2 mx-auto"
+                                    data-toggle="modal" onclick="showModal('Login')">Log in</button>
+                                <button type="button" class="btn btn-light roundedBTN col-7 mb-2 mx-auto"
+                                    data-toggle="modal" onclick="showModal('SignUp')">
+                                    Sign Up</button>
+                            </div>
                         </div>
-                        <div class="successAlert alert alert-success">
-                            <strong>Success!</strong> you have successfully registered.
-                        </div>
-                        <div class="errorAlert alert alert-danger">
-                            <strong>Error!</strong>
-                            <div style="display: inline;" id="errorMessage">
+                    </div>
+                </div>
+            </div>
+            <!-- SignUp Modal-->
+            <div class="container-fluid">
+                <div class="modal hide" id="SignUp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
+                                    onclick="showModal('Login')">Login</button>
+                            </div>
+                            <div class="columContainer">
+                                <img src="./Modals/plogo.png" class="img-circle" />
+                                <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+                            </div>
+                            <div class="form-row">
+
+                                <input type="text" class="form-control col-7" id="name" placeholder="Full name">
+                                <input type="email" class="form-control col-7" id="email" placeholder="Email"
+                                    data-toggle="popover" title="Email" data-trigger="focus"
+                                    data-content="Email must contain an @ example test@test.com">
+                                <input type="password" class="form-control col-7" id="password" value="" name="password"
+                                    placeholder="Password" data-toggle="popover" title="Password" data-trigger="focus"
+                                    data-content="Password must consist of 8 characters including capital letter"
+                                    onkeyup="isGood(this.value)">
+                                <small class="help-block col-7 offset-1" id="password-text"></small>
+                                <input type="date" class="form-control col-7" id="birthdate" placeholder="Birthdate">
+                                <input type="url" class="form-control col-7" id="profilePicUrl"
+                                    placeholder="profile Picture Url">
+
+                                <button type="button" class="btn btn-danger roundedBTN col-7 mx-auto my-2"
+                                    onclick="SignUp()" id="signupbutton">
+                                    Sign Up
+                                </button>
+
+                            </div>
+                            <div class="successAlert alert alert-success">
+                                <strong>Success!</strong> you have successfully registered.
+                            </div>
+                            <div class="errorAlert alert alert-danger">
+                                <strong>Error!</strong>
+                                <div style="display: inline;" id="errorMessage">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Login Modal-->
-    <div class="container-fluid">
-        <div class="modal hide" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
-                            onclick="showModal('SignUp')">Sign Up</button>
-                    </div>
-                    <div class="columContainer">
-                        <img src="./Modals/plogo.png" class="img-circle" />
-                        <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
-                        <div class="row">
+        <!-- Login Modal-->
+        <div class="container-fluid">
+            <div class="modal hide" id="Login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="btn btn-danger roundedBTN" style="width: 100px;"
+                                onclick="showModal('SignUp')">Sign Up</button>
+                        </div>
+                        <div class="columContainer">
+                            <img src="./Modals/plogo.png" class="img-circle" />
+                            <h2>Welcome to Pinterest <span class="label label-default"></span></h2>
+                            <div class="row">
 
-                            <div class="input-group col-7 mx-auto p-0">
-                                <div class="input-group-prepend">
-                                    <i class="fa fa-envelope icon"></i>
+                                <div class="input-group col-7 mx-auto p-0">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-envelope icon"></i>
+                                    </div>
+                                    <input class="form-control loginTextField" type="text" placeholder="Email"
+                                        name="email" id="loginemail" data-toggle="tooltip" data-placement="top"
+                                        title="Your Email">
                                 </div>
-                                <input class="form-control loginTextField" type="text" placeholder="Email" name="email"
-                                    id="loginemail" data-toggle="tooltip" data-placement="top" title="Your Email">
-                            </div>
 
-                            <div class="mt-2 input-group col-7 mx-auto p-0">
-                                <div class="input-group-prepend">
-                                    <i class="fa fa-key icon"></i>
+                                <div class="mt-2 input-group col-7 mx-auto p-0">
+                                    <div class="input-group-prepend">
+                                        <i class="fa fa-key icon"></i>
+                                    </div>
+                                    <input class="form-control loginTextField" type="password" placeholder="Password"
+                                        name="psw" id="loginpassword" data-toggle="tooltip" data-placement="top"
+                                        title="Your Password">
                                 </div>
-                                <input class="form-control loginTextField" type="password" placeholder="Password"
-                                    name="psw" id="loginpassword" data-toggle="tooltip" data-placement="top"
-                                    title="Your Password">
+                                <button class="btn btn-danger roundedBTN col-7 my-2 mx-auto" onclick="Login()">
+                                    Log in</button>
                             </div>
-                            <button class="btn btn-danger roundedBTN col-7 my-2 mx-auto" onclick="Login()">
-                                Log in</button>
-                        </div>
-                        <div class="successAlert alert alert-success">
-                            <strong>Success!</strong> you have successfully logged in.
-                        </div>
-                        <div class="errorLoginAlert alert alert-danger">
-                            <strong>Error!</strong>
-                            <div style="display: inline;" id="errorloginMessage">
+                            <div class="successAlert alert alert-success">
+                                <strong>Success!</strong> you have successfully logged in.
                             </div>
-                        </div>
+                            <div class="errorLoginAlert alert alert-danger">
+                                <strong>Error!</strong>
+                                <div style="display: inline;" id="errorloginMessage">
+                                </div>
+                            </div>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
