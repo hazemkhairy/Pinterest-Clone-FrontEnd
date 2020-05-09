@@ -8,6 +8,7 @@ const init = () => {
             a.popover('hide');
         }, 3000, $(this));
     });
+
 }
 
 const createRoundButton = (text) => {
@@ -21,6 +22,8 @@ const createRoundButton = (text) => {
     p.style.fontWeight = "600"
     button.appendChild(p)
     div.appendChild(button);
+
+    div.onclick = (e) => { e.stopPropagation() }
     return div;
 }
 const createPopOverEffect = (optionsButton) => {
@@ -39,6 +42,7 @@ const createPopOverEffect = (optionsButton) => {
     optionsButton.title = 'This Pin was inspired by your recent activity'
     optionsButton.setAttribute('data-toggle', 'popover')
     optionsButton.setAttribute('data-content', btnGroup.outerHTML)
+
     return optionsButton
 }
 const createLowerRow = () => {
@@ -63,6 +67,9 @@ const createUpperRow = () => {
     saveButton.textContent = "Save"
     saveButton.style.fontWeight = "600"
     upperRow.appendChild(saveButton);
+
+
+    saveButton.onclick = (e) => { e.stopPropagation() }
     return upperRow;
 }
 const createCoverCardDecoration = () => {
@@ -111,6 +118,8 @@ const createCard = (data) => {
 
     card.appendChild(cardCover)
     card.appendChild(img)
+
+    card.onclick = () => { location.href='./postPage.html'+`?ID=${data._id}`}
     return card;
 
 }

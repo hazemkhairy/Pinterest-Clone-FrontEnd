@@ -1,13 +1,25 @@
 $(document).ready(function () {
-  $("#preAuthentication").modal('show');
-});
+  $('.modal').modal({
+    backdrop: 'static',
+    keyboard: false
+  })
+  showModal('preAuthentication')
 
+
+});
+const showModal = (target) => {
+
+  $("#preAuthentication").modal('hide');
+  $("#Login").modal('hide');
+  $("#SignUp").modal('hide');
+  $(`#${target}`).modal('show');
+}
 function validateLoginForm() {
   let email = document.getElementById("loginemail").value;
   let password = document.getElementById("loginpassword").value;
   let valid = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-  
-  if (email == "" || password == "" ) {
+
+  if (email == "" || password == "") {
     showloginErrorAlert('Please Fill required data.')
     return false;
   }
@@ -39,16 +51,16 @@ const Login = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        if(data.message=='Login success')
-        {
+        if (data.message == 'Login success') {
           $(".errorAlert").hide();
           $(".successAlert").show();
-           setTimeout(function () {
-          $(".successAlert").hide();
-          }, 5000);
+          setTimeout(function () {
+            $(".successAlert").hide();
+            window.location.replace("HomePage.html")
+          }, 1000);
         }
-        else 
-        showloginErrorAlert(data.message)
+        else
+          showloginErrorAlert(data.message)
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -90,16 +102,15 @@ function validateSignUpForm() {
   else {
     if (valid.test(email) !== true) {
       showErrorAlert('Invalid Email')
-      
+
       return false;
     }
     if (password.length < 8) {
       showErrorAlert('Short Password')
-      
+
       return false;
     }
-    if(letters.test(name)!==true)
-    {
+    if (letters.test(name) !== true) {
       showErrorAlert('Enter letters or space only in your name')
       return false;
     }
@@ -133,16 +144,15 @@ const SignUp = () => {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        if(data.message=='Registered successfully')
-        {
+        if (data.message == 'Registered successfully') {
           $(".errorAlert").hide();
           $(".successAlert").show();
-           setTimeout(function () {
-          $(".successAlert").hide();
+          setTimeout(function () {
+            $(".successAlert").hide();
           }, 5000);
         }
-        else 
-        showErrorAlert(data.message)
+        else
+          showErrorAlert(data.message)
       })
       .catch((error) => {
         console.error('Error:', error);
